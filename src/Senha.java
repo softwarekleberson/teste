@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 public class Senha {
 
 	public static final int TAMANHO_MINIMO_SENHA = 10;
@@ -5,7 +7,7 @@ public class Senha {
 	private String conteudo;
 	
 	public Senha(String conteudo) {
-		setConteudo(conteudo);
+		VerificaTamanhoSenha(conteudo);
 	}
 	
 	public void VerificaTamanhoSenha(String conteudo) {
@@ -20,7 +22,7 @@ public class Senha {
 		String regex = "^(?=.*[0-9](?=.*[az])"
 				+ "(?=.*[AZ](?=.*[@#$%^&-+=()])(?=\\S+$"
 				+ ").{10,30}$"; 
-		if(conteudo != regex) {
+		if(!Pattern.matches(regex, regex)) {
 			throw new IllegalArgumentException("Formato incorreto de senha"
 					+ "deve possuir letra maiscula, minuscula numero e caracter expecial");
 		}
