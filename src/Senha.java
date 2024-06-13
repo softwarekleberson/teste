@@ -22,7 +22,7 @@ public class Senha {
 		String regex = "^(?=.*[0-9](?=.*[az])"
 				+ "(?=.*[AZ](?=.*[@#$%^&-+=()])(?=\\S+$"
 				+ ").{10,30}$"; 
-		if(!Pattern.matches(regex, regex)) {
+		if(!Pattern.matches(regex, conteudo)) {
 			throw new IllegalArgumentException("Formato incorreto de senha"
 					+ "deve possuir letra maiscula, minuscula numero e caracter expecial");
 		}
